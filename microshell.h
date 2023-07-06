@@ -18,8 +18,8 @@
 typedef struct s_cmd
 {
 	char			*cmd;
-	char			*path[];
 	struct s_cmd	*next;
+	// char			*path[];
 }				t_cmd;
 
 typedef struct s_piped
@@ -30,14 +30,18 @@ typedef struct s_piped
 
 typedef struct s_semicolon
 {
-	struct s_piped		*head_p;
+	char				**line;
 	struct s_semicolon	*next;
 }				t_semicolon;
 
 typedef struct s_micro
 {
-	char				*envp[];
 	struct s_semicolon	*head_s;
+	char				**envp;
 }			t_micro;
+
+int			ft_list_size(char **list);
+int			count_till(char *list[], char *str);
+t_semicolon	*init_micro(int argc, char *argv[], char *envp[]);
 
 #endif
