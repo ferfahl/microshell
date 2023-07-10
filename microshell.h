@@ -8,6 +8,8 @@
 # include <sys/types.h> // waitpid, kill
 # include <sys/wait.h> // waitpid
 
+#include <stdio.h> //debug
+
 # define STDIN 0
 # define STDOUT 1
 # define STDERR 2
@@ -41,7 +43,7 @@ typedef struct s_micro
 }			t_micro;
 
 int			ft_list_size(char **list);
-int			count_till(char *list[], char *str);
+int			count_till(int argc, char *list[], char *str);
 t_semicolon	*init_micro(int argc, char *argv[], char *envp[]);
 
 #endif
