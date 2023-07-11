@@ -24,7 +24,7 @@ fclean: clean
 	rm -f $(NAME)
 
 val: $(NAME)
-	valgrind --leak-check=full --show-leak-kinds=all ./$(NAME) ls -l
+	valgrind --leak-check=full --show-leak-kinds=all --track-fds=yes ./$(NAME) /bin/ls 
 
 make re: fclean all
 
