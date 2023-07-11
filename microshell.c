@@ -40,7 +40,7 @@ int	cd_micro(char *argv[], int i)
 	if (i != 2)
 		return (ft_putstr_2("error: cd: bad arguments", NULL, 0));
 	else if (chdir(argv[1]) != 0)
-		return (ft_putstr_2("error: cd: cannot change directory to ", NULL, 0));
+		return (ft_putstr_2("error: cd: cannot change directory to ", argv[1], 0));
 	return (0);
 }
 
