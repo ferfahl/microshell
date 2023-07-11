@@ -4,9 +4,6 @@ CC = cc
 FLAGS = -Wall -Wextra -Werror
 
 SOURCES =	microshell.c		\
-			piped.c				\
-			semicolon.c			\
-			utils.c
 
 OBJS = $(SOURCES:%.c=%.o)
 

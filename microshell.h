@@ -17,33 +17,4 @@
 # define TRUE 1
 # define FALSE 0
 
-typedef struct s_cmd
-{
-	char			*cmd;
-	struct s_cmd	*next;
-	// char			*path[];
-}				t_cmd;
-
-typedef struct s_piped
-{
-	struct s_cmd	*head_c;
-	struct s_piped	*next;
-}				t_piped;
-
-typedef struct s_semicolon
-{
-	char				**line;
-	struct s_semicolon	*next;
-}				t_semicolon;
-
-typedef struct s_micro
-{
-	struct s_semicolon	*head_s;
-	char				**envp;
-}			t_micro;
-
-int			ft_list_size(char **list);
-int			count_till(int argc, char *list[], char *str);
-t_semicolon	*init_micro(int argc, char *argv[], char *envp[]);
-
 #endif
