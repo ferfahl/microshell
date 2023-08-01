@@ -95,6 +95,8 @@ int	piped(char *argv[], char *envp[], int index, int fd_mod)
 	}
 	else
 	{
+		while (waitpid(-1, NULL, WUNTRACED) != -1)
+			;
 		if (close(fd[1]) == -1)
 			exit(ft_putstr_2("error: fatal", NULL, 1));
 		if (close(fd_mod) == -1)
